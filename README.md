@@ -8,9 +8,12 @@ Estas rutas se usan fuera de la web (firma de correo, iconos). No las renombres 
 
 | Ruta | Uso |
 | --- | --- |
-| `/logo-firma.png` | Logo de la firma de Gmail (180×180, se muestra a 56 px) |
+| `/logo-firma.png` | Logo de la firma anterior. Se mantiene para que los correos ya enviados sigan mostrándolo |
+| `/firma-v2.png` | Logo de la firma nueva (144×144, se muestra a 48 px) |
 | `/favicon.ico`, `/favicon.svg` | Favicon |
 | `/apple-touch-icon.png` | Icono al guardar la web en iPhone |
+| `/site.webmanifest`, `/android-chrome-*.png` | Icono en Android |
+| `/assets/marca/` | Logos de la marca, incluido el logo animado |
 
 ## Dominio propio
 

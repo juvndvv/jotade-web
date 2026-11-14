@@ -3,148 +3,212 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Jotade — software a medida</title>
-<meta name="description" content="Integraciones, automatización, backends y apps a medida. Desarrollo de software desde Valencia.">
-<meta name="theme-color" content="#f7f7f5">
+<title>Jotade — Sistemas que trabajan por tu equipo</title>
+<meta name="description" content="Sistemas de gestión, automatización e inteligencia artificial para pequeñas empresas que crecen. Acompañamiento de principio a fin.">
+<meta name="theme-color" content="#f4f2ee">
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@1&display=swap">
 <style>
-body{margin:0;background:#f7f7f5}
-a{color:#0b7a5e}a:hover{color:#0a6650}
-</style>
-<style>
+:root{
+  --grafito:#141519; --hueso:#f4f2ee; --niebla:#e4e1da; --piedra:#615d55; --piedra-clara:#a29d93;
+  --azul:#2b34e8; --azul-claro:#9aa0ff; --blanco:#fff; --linea:#d6d2c9; --linea-osc:#2c2e34;
+  --r:6px; --max:1160px;
+}
+*{box-sizing:border-box}
 html{scroll-behavior:smooth}
-@media (max-width:640px){
-  h1{font-size:44px!important;line-height:48px!important}
-  h2{font-size:32px!important;line-height:38px!important}
-  #top{padding-top:56px!important;padding-bottom:96px!important}
-  #proceso{padding-top:96px!important;padding-bottom:96px!important}
-  #servicios>div,#contacto>div{padding-top:72px!important;padding-bottom:72px!important;border-radius:28px!important}
-  article{padding:28px!important}
+body{margin:0;background:var(--hueso);color:var(--grafito);font-family:"Instrument Sans",Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--azul)}
+.serif{font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-weight:400;letter-spacing:-.01em}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.eyebrow{margin:0;font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--piedra)}
+h1,h2,h3{font-weight:600;letter-spacing:-.025em;margin:0}
+h1{font-size:clamp(44px,6.4vw,76px);line-height:1.02}
+h1 .serif{font-size:1.1em}
+h2{font-size:clamp(32px,4vw,46px);line-height:1.08}
+h3{font-size:21px;line-height:1.3;letter-spacing:-.01em}
+.muted{color:var(--piedra)}
+.btn{display:inline-block;text-decoration:none;font-weight:500;font-size:16px;padding:14px 22px;border-radius:var(--r);border:1px solid var(--grafito)}
+.btn-dark{background:var(--grafito);color:var(--hueso)}
+.btn-line{color:var(--grafito)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--azul);outline-offset:3px}
+
+/* header */
+header{padding:22px 0}
+header .wrap{display:flex;align-items:center;gap:16px 32px;flex-wrap:wrap}
+header .logo img{display:block;height:34px;width:auto}
+nav{display:flex;gap:6px 28px;flex-wrap:wrap;flex:1;justify-content:flex-end;font-size:15px}
+nav a{color:var(--piedra);text-decoration:none;padding:10px 0}
+nav a:hover{color:var(--grafito)}
+
+/* the brand line: a rule that ends in a cup holding the dot */
+.cupline{display:flex;align-items:flex-start}
+.cupline .rule{flex:1;border-top:2px solid currentColor;margin-top:9px;position:relative}
+.cupline .rule i{position:absolute;top:-8px;width:14px;height:14px;border-radius:50%;background:var(--hueso);border:2px solid currentColor}
+.cupline svg{flex:none;display:block}
+
+/* hero */
+.hero{padding:88px 0 120px}
+.hero .wrap{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:center}
+.hero p.lead{font-size:19px;line-height:1.6;color:var(--piedra);max-width:520px;margin:24px 0 32px}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.card{background:var(--blanco);border-radius:var(--r);padding:28px}
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:18px 24px;margin-top:22px}
+.steps b{display:block;font-size:16px}
+.steps span{font-size:14px;color:var(--piedra)}
+
+/* sections */
+section{padding:112px 0}
+.band{background:var(--blanco)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-bottom:56px}
+.head>p{margin:0;color:var(--piedra);max-width:460px;justify-self:end}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.svc{background:var(--hueso);border-radius:var(--r);padding:28px;display:flex;flex-direction:column;gap:12px}
+.svc .dot{width:10px;height:10px;border-radius:50%;background:var(--azul)}
+.svc p{margin:0;color:var(--piedra);font-size:15px}
+.method .cupline{color:var(--grafito);margin:8px 0 28px}
+.method .labels{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.method .labels p{margin:6px 0 0;color:var(--piedra);font-size:15px}
+.about .wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.about p{margin:0 0 16px;font-size:19px;line-height:1.6}
+.contact{background:var(--grafito);color:var(--hueso)}
+.contact .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end}
+.contact p{color:var(--piedra-clara);margin:20px 0 0;max-width:480px}
+.contact .btn{background:var(--azul-claro);color:var(--grafito);border-color:var(--azul-claro)}
+.contact .cupline{color:var(--hueso);margin-top:40px}
+footer{background:var(--grafito);color:var(--piedra-clara);border-top:1px solid var(--linea-osc);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-top:28px;padding-bottom:36px}
+footer img{height:22px;width:auto;display:block}
+
+@media (max-width:860px){
+  .hero{padding:48px 0 80px}
+  .hero .wrap,.about .wrap,.contact .wrap,.head{grid-template-columns:1fr;gap:32px}
+  .head>p{justify-self:start}
+  nav{flex-basis:100%}
+  .grid4{grid-template-columns:1fr 1fr}
+  .method .labels{grid-template-columns:1fr 1fr}
+  section{padding:80px 0}
+  nav{justify-content:flex-start}
+}
+@media (max-width:520px){
+  .grid4,.steps{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
-<div style="font-family: Geist, ui-sans-serif, system-ui, sans-serif; color: #0e1116; background: #f7f7f5; font-size: 17px; line-height: 28px;">
 
-<header style="max-width: 1160px; margin: 0 auto; padding: 28px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 40px;">
-<a href="#top" style="display: flex; align-items: center;"><img src="assets/logo/jotade-lockup.svg" alt="jotade" style="height: 30px; width: auto; display: block;"></a>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; gap: 4px 28px; flex-grow: 1; justify-content: flex-end; font-size: 15px; line-height: 20px;">
-<a href="#servicios" style="color: #575d68; text-decoration: none; padding: 12px 0;">Servicios</a>
-<a href="#proceso" style="color: #575d68; text-decoration: none; padding: 12px 0;">Cómo trabajo</a>
-<a href="#contacto" style="color: #575d68; text-decoration: none; padding: 12px 0;">Contacto</a>
-</nav>
-<a href="#contacto" style="background: #0e1116; color: #f7f7f5; text-decoration: none; font-size: 15px; line-height: 20px; font-weight: 500; padding: 12px 22px; border-radius: 9999px;">Hablemos</a>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Jotade, inicio"><img src="assets/marca/jotade-logo-animado-positivo.svg" alt="Jotade" width="120" height="34"></a>
+    <nav aria-label="Principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Método</a>
+      <a href="#quien">Quién soy</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </div>
 </header>
 
-<section id="top" style="max-width: 1160px; margin: 0 auto; padding: 120px 24px 160px; display: flex; flex-wrap: wrap; gap: 64px; align-items: center;">
-<div style="flex: 999 1 560px; min-width: 0; display: flex; flex-direction: column; gap: 32px;">
-<p style="margin: 0; display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; background: #ffffff; border-radius: 9999px; padding: 8px 16px 8px 10px; font-size: 14px; line-height: 20px; color: #575d68;"><span style="width: 8px; height: 8px; border-radius: 9999px; background: #0b7a5e;"></span>Desarrollo de software · Valencia</p>
-<h1 style="margin: 0; font-size: 68px; line-height: 72px; font-weight: 600; letter-spacing: -0.035em; text-wrap: balance;">Software a medida, bien construido.</h1>
-<p style="margin: 0; font-size: 20px; line-height: 32px; color: #575d68; max-width: 560px;">Integro los sistemas que ya usas, automatizo el trabajo repetitivo y construyo backends y apps que aguantan el uso real.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
-<a href="#contacto" style="background: #0b7a5e; color: #ffffff; text-decoration: none; font-weight: 500; padding: 16px 28px; border-radius: 9999px;">Pide un presupuesto</a>
-<a href="#servicios" style="background: #ffffff; color: #0e1116; text-decoration: none; font-weight: 500; padding: 16px 28px; border-radius: 9999px;">Ver servicios</a>
-</div>
-</div>
-<div aria-hidden="true" style="flex: 1 1 340px; max-width: 420px; aspect-ratio: 1 / 1; position: relative;">
-<div style="position: absolute; inset: 0; border-radius: 9999px; background: #dcf1e8;"></div>
-<div style="position: absolute; right: 0; bottom: 0; width: 50%; height: 50%; border-radius: 0 0 9999px 0; background: #0b7a5e;"></div>
-<div style="position: absolute; left: 14%; top: 14%; width: 30%; aspect-ratio: 1 / 1; border-radius: 9999px; background: #0e1116;"></div>
-<div style="position: absolute; left: 40%; top: 52%; width: 18%; height: 7%; border-radius: 9999px; background: #f2b33d;"></div>
-</div>
-</section>
+<main id="inicio">
+  <div class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Sistemas · Automatización · IA</p>
+        <h1 style="margin-top:20px">Sistemas que <span class="serif">trabajan</span> por tu equipo.</h1>
+        <p class="lead">Automatizo procesos y conecto tus sistemas de gestión para que tu equipo deje de hacer a mano lo que puede ir solo, y dedique su tiempo a lo que de verdad aporta.</p>
+        <div class="ctas">
+          <a class="btn btn-dark" href="#contacto">Cuéntame tu caso</a>
+          <a class="btn btn-line" href="#metodo">Cómo trabajo</a>
+        </div>
+      </div>
+      <div class="card" aria-label="Método de trabajo">
+        <p class="eyebrow">De principio a fin</p>
+        <div class="cupline" style="margin-top:22px" aria-hidden="true">
+          <div class="rule"><i style="left:0"></i><i style="left:33%"></i><i style="left:66%"></i></div>
+          <svg width="40" height="32" viewBox="0 0 40 32"><path d="M0 9 H6 A13 13 0 0 0 32 9 V0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="13" r="6" fill="#2b34e8"/></svg>
+        </div>
+        <div class="steps">
+          <div><b>1. Diagnóstico</b><span>Qué le quita tiempo a tu equipo</span></div>
+          <div><b>2. Diseño</b><span>Qué automatizar y cómo</span></div>
+          <div><b>3. Implantación</b><span>El sistema, funcionando</span></div>
+          <div><b>4. Acompañamiento</b><span>Ajustes y soporte</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<section id="servicios" style="padding: 0 16px;">
-<div style="max-width: 1240px; margin: 0 auto; background: #ffffff; border-radius: 40px; padding: 120px 24px;">
-<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 64px;">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 620px;">
-<p style="margin: 0; font-size: 15px; line-height: 20px; color: #0b7a5e; font-weight: 500;">Servicios</p>
-<h2 style="margin: 0; font-size: 44px; line-height: 50px; font-weight: 600; letter-spacing: -0.03em;">Qué puedo hacer por tu negocio</h2>
-</div>
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-<article style="background: #f7f7f5; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 44px; height: 44px; border-radius: 9999px; background: #dcf1e8; color: #0a6650; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">01</span>
-<h3 style="margin: 12px 0 0; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.015em;">Integraciones</h3>
-<p style="margin: 0; color: #575d68;">Conecto tu TPV, ERP, tienda online o proveedores para que los datos viajen solos y dejes de copiarlos a mano.</p>
-</article>
-<article style="background: #f7f7f5; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 44px; height: 44px; border-radius: 9999px; background: #dcf1e8; color: #0a6650; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">02</span>
-<h3 style="margin: 12px 0 0; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.015em;">Automatización</h3>
-<p style="margin: 0; color: #575d68;">Informes, avisos y tareas repetitivas que hoy te cuestan horas, convertidos en flujos que se ejecutan sin ti.</p>
-</article>
-<article style="background: #f7f7f5; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 44px; height: 44px; border-radius: 9999px; background: #dcf1e8; color: #0a6650; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">03</span>
-<h3 style="margin: 12px 0 0; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.015em;">Lectura de documentos</h3>
-<p style="margin: 0; color: #575d68;">Facturas y albaranes leídos automáticamente: los datos se extraen, se validan y entran en tu sistema.</p>
-</article>
-<article style="background: #f7f7f5; border-radius: 28px; padding: 40px; display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 44px; height: 44px; border-radius: 9999px; background: #dcf1e8; color: #0a6650; display: flex; align-items: center; justify-content: center; font-family: 'Geist Mono', ui-monospace, monospace; font-size: 14px; font-weight: 500;">04</span>
-<h3 style="margin: 12px 0 0; font-size: 24px; line-height: 30px; font-weight: 600; letter-spacing: -0.015em;">Backends y apps</h3>
-<p style="margin: 0; color: #575d68;">APIs, paneles internos y apps iOS hechas para crecer, con bases de datos bien diseñadas desde el principio.</p>
-</article>
-</div>
-</div>
-</div>
-</section>
+  <section id="servicios" class="band">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Servicios</p><h2 style="margin-top:14px">Menos tareas repetidas.<br>Más <span class="serif">empresa</span>.</h2></div>
+        <p>Para pequeñas empresas que están creciendo y necesitan que la tecnología les quite trabajo, no que les dé más.</p>
+      </div>
+      <div class="grid4">
+        <article class="svc"><span class="dot"></span><h3>Sistemas de gestión</h3><p>Pongo orden en cómo se registran pedidos, clientes, stock o facturas, para que la información esté en un solo sitio.</p></article>
+        <article class="svc"><span class="dot"></span><h3>Automatización</h3><p>Informes, avisos y tareas que hoy se hacen a mano pasan a hacerse solos, sin errores de copia.</p></article>
+        <article class="svc"><span class="dot"></span><h3>Integraciones</h3><p>Conecto las herramientas que ya usas para que los datos viajen entre ellas sin intervención.</p></article>
+        <article class="svc"><span class="dot"></span><h3>Inteligencia artificial</h3><p>La aplico donde mejora el resultado: leer documentos, clasificar información o responder consultas.</p></article>
+      </div>
+    </div>
+  </section>
 
-<section id="proceso" style="max-width: 1160px; margin: 0 auto; padding: 160px 24px; display: flex; flex-direction: column; gap: 64px;">
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 620px;">
-<p style="margin: 0; font-size: 15px; line-height: 20px; color: #0b7a5e; font-weight: 500;">Cómo trabajo</p>
-<h2 style="margin: 0; font-size: 44px; line-height: 50px; font-weight: 600; letter-spacing: -0.03em;">Tres pasos, sin sorpresas</h2>
-</div>
-<ol style="margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 48px;">
-<li style="display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 56px; height: 56px; border-radius: 9999px; border: 1.5px solid #0e1116; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">1</span>
-<h3 style="margin: 10px 0 0; font-size: 22px; line-height: 28px; font-weight: 600;">Entender el problema</h3>
-<p style="margin: 0; color: #575d68;">Una llamada para ver qué te frena. Si no hace falta software, te lo digo.</p>
-</li>
-<li style="display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 56px; height: 56px; border-radius: 9999px; border: 1.5px solid #0e1116; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">2</span>
-<h3 style="margin: 10px 0 0; font-size: 22px; line-height: 28px; font-weight: 600;">Presupuesto cerrado</h3>
-<p style="margin: 0; color: #575d68;">Alcance, plazo y precio por escrito antes de empezar.</p>
-</li>
-<li style="display: flex; flex-direction: column; gap: 14px;">
-<span style="width: 56px; height: 56px; border-radius: 9999px; background: #0e1116; color: #f7f7f5; display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 600;">3</span>
-<h3 style="margin: 10px 0 0; font-size: 22px; line-height: 28px; font-weight: 600;">Entregas cortas</h3>
-<p style="margin: 0; color: #575d68;">Ves avances reales cada semana y el código y la documentación quedan bien explicados.</p>
-</li>
-</ol>
-</section>
+  <section id="metodo" class="method">
+    <div class="wrap">
+      <div class="head">
+        <div><p class="eyebrow">Método</p><h2 style="margin-top:14px">De principio a <span class="serif">fin</span>.</h2></div>
+        <p>Un solo interlocutor durante todo el proyecto. Sabes en cada momento qué se está haciendo, cuánto cuesta y cuándo estará.</p>
+      </div>
+      <div class="cupline" aria-hidden="true">
+        <div class="rule"><i style="left:0"></i><i style="left:25%"></i><i style="left:50%"></i><i style="left:75%"></i></div>
+        <svg width="40" height="32" viewBox="0 0 40 32"><path d="M0 9 H6 A13 13 0 0 0 32 9 V0" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="19" cy="13" r="6" fill="#2b34e8"/></svg>
+      </div>
+      <div class="labels">
+        <div><h3>Diagnóstico</h3><p>Hablamos de tu día a día y detecto qué tareas se pueden quitar de encima. Si algo no compensa automatizarlo, te lo digo.</p></div>
+        <div><h3>Diseño</h3><p>Propuesta con alcance, plazo y precio cerrados antes de empezar.</p></div>
+        <div><h3>Implantación</h3><p>Entregas cortas: ves el sistema funcionando poco a poco, no al final.</p></div>
+        <div><h3>Acompañamiento</h3><p>Formación a tu equipo, ajustes y soporte una vez está en marcha.</p></div>
+      </div>
+    </div>
+  </section>
 
-<section style="max-width: 1160px; margin: 0 auto; padding: 0 24px 160px; display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
-<div aria-hidden="true" style="flex: 0 0 auto; width: 160px; height: 160px; border-radius: 9999px; background: #ffffff; display: flex; align-items: center; justify-content: center;">
-<img src="assets/logo/jotade-mark.svg" alt="" style="width: 72px; height: 72px; display: block;">
-</div>
-<div style="flex: 999 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
-<h2 style="margin: 0; font-size: 36px; line-height: 44px; font-weight: 600; letter-spacing: -0.025em;">Hola, soy Juanda</h2>
-<p style="margin: 0; font-size: 19px; line-height: 31px; color: #575d68;">Desarrollador backend con experiencia en integraciones, procesamiento de documentos y automatización para hostelería. Trabajo desde el Camp de Morvedre con clientes de cualquier sitio. Un interlocutor, decisiones rápidas y código que otro desarrollador puede entender mañana.</p>
-</div>
-</section>
+  <section id="quien" class="about band">
+    <div class="wrap">
+      <div><p class="eyebrow">Quién soy</p><h2 style="margin-top:14px">Hola, soy <span class="serif">Juanda</span>.</h2></div>
+      <div>
+        <p>Desarrollador especializado en sistemas de gestión, automatización e inteligencia artificial. Trabajo desde el Camp de Morvedre (Valencia) con empresas de cualquier sitio.</p>
+        <p class="muted" style="font-size:17px">Jotade es un estudio pequeño a propósito: hablas siempre con quien diseña y construye tu sistema, y las decisiones se toman rápido.</p>
+      </div>
+    </div>
+  </section>
 
-<section id="contacto" style="padding: 0 16px 16px;">
-<div style="max-width: 1240px; margin: 0 auto; background: #0e1116; color: #edeef0; border-radius: 40px; padding: 120px 24px; position: relative; overflow: hidden;">
-<div aria-hidden="true" style="position: absolute; right: -120px; bottom: -120px; width: 360px; height: 360px; border-radius: 9999px; background: #0b7a5e;"></div>
-<div aria-hidden="true" style="position: absolute; right: 150px; bottom: 170px; width: 48px; height: 18px; border-radius: 9999px; background: #f2b33d;"></div>
-<div style="max-width: 1080px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; position: relative;">
-<h2 style="margin: 0; font-size: 52px; line-height: 58px; font-weight: 600; letter-spacing: -0.03em; max-width: 720px; text-wrap: balance;">¿Tienes un proceso que te quita horas cada semana?</h2>
-<p style="margin: 0; font-size: 19px; line-height: 30px; color: #9aa1ac; max-width: 520px;">Escríbeme y te digo si se puede automatizar y cuánto costaría.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; padding-top: 8px;">
-<a href="mailto:dani@jotade.io" style="background: #3dd9a8; color: #04241b; text-decoration: none; font-weight: 500; padding: 16px 28px; border-radius: 9999px;">dani@jotade.io</a>
-</div>
-</div>
-</div>
-</section>
+  <section id="contacto" class="contact">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow" style="color:var(--piedra-clara)">Contacto</p>
+        <h2 style="margin-top:14px">¿Qué tarea le quitarías hoy a tu equipo?</h2>
+        <p>Cuéntamela y te digo si tiene sentido automatizarla y cuánto costaría.</p>
+      </div>
+      <div>
+        <a class="btn" href="mailto:dani@jotade.io">dani@jotade.io</a>
+        <div class="cupline" aria-hidden="true">
+          <div class="rule" style="border-color:var(--hueso)"></div>
+          <svg width="40" height="32" viewBox="0 0 40 32"><path d="M0 9 H6 A13 13 0 0 0 32 9 V0" fill="none" stroke="#f4f2ee" stroke-width="2"/><circle cx="19" cy="13" r="6" fill="#9aa0ff"/></svg>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-<footer style="max-width: 1160px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-wrap: wrap; gap: 16px; align-items: center; justify-content: space-between; font-size: 14px; line-height: 20px; color: #575d68;">
-<img src="assets/logo/jotade-lockup.svg" alt="jotade" style="height: 22px; width: auto; display: block;">
-<p style="margin: 0;">© 2026 Jotade · Estivella, Valencia</p>
+<footer>
+  <div class="wrap">
+    <img src="assets/marca/jotade-logo-negativo.svg" alt="Jotade">
+    <span>© 2026 Jotade · Estivella, Valencia</span>
+  </div>
 </footer>
 
-</div>
 </body>
 </html>
